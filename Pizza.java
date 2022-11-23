@@ -1,5 +1,3 @@
-
-@SuppressWarnings("ALL")
 public class Pizza {
     private PizzaSize size;
     private double price;
