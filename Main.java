@@ -1,8 +1,15 @@
 class Main {
-  public static void main(String[] args) {
-    String[] toppings = { "Peperoni", "Olives", "Pepers", "Anchovies", "Pineapple" };
-    Pizza myPizza = new Pizza(PizzaSize.LARGE, toppings);
-    System.out.println(myPizza.getStringSize());
-    System.out.println(myPizza.getPrice());
-  }
+    public static void main(String[] args) {
+        System.out.println("\n");
+        String[] smallToppings = {"Peperoni", "Olives"};
+        String[] mediumToppings = {"Peperoni", "Olives", "Peppers", "Anchovies"};
+        String[] largeToppings = {"Peperoni", "Olives", "Peppers", "Anchovies", "Pineapple", "Tuna", "Chicken"};
+        Pizza mySmallPizza = new Pizza(PizzaSize.SMALL, smallToppings);
+        System.out.println(mySmallPizza.getDescription());
+        Pizza myMediumPizza = new Pizza(PizzaSize.MEDIUM, mediumToppings);
+        System.out.println(myMediumPizza.getDescription());
+        Pizza myLargePizza = new Pizza(PizzaSize.LARGE, largeToppings);
+        System.out.println(myLargePizza.getDescription());
+
+    }
 }
