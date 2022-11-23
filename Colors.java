@@ -1,3 +1,4 @@
+@SuppressWarnings("ALL")
 public class Colors {
 
     public static final String BOLD = "\u001B[1m";

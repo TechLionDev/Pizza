@@ -1,4 +1,5 @@
 
+@SuppressWarnings("ALL")
 public class Pizza {
     private PizzaSize size;
     private double price;
@@ -18,29 +19,19 @@ public class Pizza {
         StringBuilder sb = new StringBuilder();
         sb.append("A ");
         switch (this.size) {
-            case SMALL:
-                sb.append(Colors.GREEN + Colors.BOLD + "small" + Colors.RESET);
-                break;
-            case MEDIUM:
-                sb.append(Colors.YELLOW + Colors.BOLD + "medium" + Colors.RESET);
-                break;
-            case LARGE:
-                sb.append(Colors.RED + Colors.BOLD + "large" + Colors.RESET);
-                break;
-            default:
-                sb.append(Colors.RED + Colors.BOLD + "FATAL ERROR: UNKNOWN SIZE FOUND" + Colors.RESET);
-                break;
-
-
+            case SMALL -> sb.append(Colors.GREEN + Colors.BOLD + "small" + Colors.RESET);
+            case MEDIUM -> sb.append(Colors.YELLOW + Colors.BOLD + "medium" + Colors.RESET);
+            case LARGE -> sb.append(Colors.RED + Colors.BOLD + "large" + Colors.RESET);
+            default -> sb.append(Colors.RED + Colors.BOLD + "FATAL ERROR: UNKNOWN SIZE FOUND" + Colors.RESET);
         }
         sb.append(" pizza was ordered with the following toppings:");
         sb.append("\n");
         for (int i = 0; i < this.toppings.length; i++) {
-            sb.append(" " + Colors.BOLD + Colors.PURPLE + (i + 1) + ". " + Colors.RESET);
-            sb.append(Colors.BOLD + this.toppings[i] + Colors.RESET);
+            sb.append(" " + Colors.BOLD + Colors.PURPLE).append(i + 1).append(". ").append(Colors.RESET);
+            sb.append(Colors.BOLD).append(this.toppings[i]).append(Colors.RESET);
             sb.append("\n");
         }
-        sb.append(Colors.CYAN + "The total cost is: " + Colors.BOLD + Colors.BLUE + "$" + Math.round(this.calcCost()) + ".00" + Colors.RESET);
+        sb.append(Colors.CYAN + "The total cost is: " + Colors.BOLD + Colors.BLUE + "$").append(Math.round(this.calcCost())).append(".00").append(Colors.RESET);
         return sb.toString();
     }
 

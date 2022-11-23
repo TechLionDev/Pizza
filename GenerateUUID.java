@@ -1,8 +1,9 @@
 import java.util.UUID;
+
+@SuppressWarnings("ALL")
 public class GenerateUUID {
     public static String generateUUID() {
         UUID uuid = UUID.randomUUID();
-        String randomUUIDString = uuid.toString();
-      return randomUUIDString;
+        return uuid.toString();
     }
 }
