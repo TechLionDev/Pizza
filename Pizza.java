@@ -4,7 +4,7 @@ public class Pizza {
     private int quantity;
     private PizzaSize size;
     private double price;
-    private String[] toppings;
+    private String[] toppings
 
     public Pizza(PizzaSize size, String[] toppings, int quantity) {
         this.UUID = GenerateUUID.generateUUID();
