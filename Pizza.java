@@ -1,11 +1,13 @@
 
 @SuppressWarnings("ALL")
 public class Pizza {
+    private int quantity;
     private PizzaSize size;
     private double price;
     private String[] toppings;
 
-    public Pizza(PizzaSize size, String[] toppings) {
+    public Pizza(PizzaSize size, String[] toppings, int quantity) {
+        this.quantity = quantity;
         this.size = size;
         this.toppings = toppings;
         this.price = size.price + (2 * toppings.length);
