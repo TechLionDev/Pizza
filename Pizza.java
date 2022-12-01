@@ -1,12 +1,14 @@
 
 @SuppressWarnings("ALL")
 public class Pizza {
+    private String UUID;
     private int quantity;
     private PizzaSize size;
     private double price;
     private String[] toppings;
 
     public Pizza(PizzaSize size, String[] toppings, int quantity) {
+        this.UUID = GenerateUUID.generateUUID();
         this.quantity = quantity;
         this.size = size;
         this.toppings = toppings;
@@ -34,6 +36,7 @@ public class Pizza {
             sb.append("\n");
         }
         sb.append(Colors.CYAN + "The total cost is: " + Colors.BOLD + Colors.BLUE + "$").append(Math.round(this.calcCost())).append(".00").append(Colors.RESET);
+        sb.append("The Order ID is: " + Colors.BOLD + Colors.GREEN + this.UUID + Colors.RESET);
         return sb.toString();
     }
 

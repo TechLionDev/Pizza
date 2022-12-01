@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.List.copyOf;
-
 class Main {
     private static PizzaSize size;
     private static int quantity;
@@ -15,26 +13,22 @@ class Main {
     }
 
     private static Pizza createPizzaOrder(PizzaSize psize, int pquantity, String[] ptoppings) {
-        Pizza newOrder = new Pizza(psize, ptoppings, pquantity);
-        return newOrder;
+        return new Pizza(psize, ptoppings, pquantity);
     }
 
     static void getInfo() {
         System.out.println(Colors.BOLD + Colors.GREEN + "Welcome to the Pizza System!\n" + Colors.RESET);
-        PizzaSize psize = getSize();
-        size = psize;
-        int pquantity = getQuantity();
-        quantity = pquantity;
-        String[] ptoppings = getToppings();
-        toppings = ptoppings;
+        size = getSize();
+        quantity = getQuantity();
+        toppings = getToppings();
     }
 
     static int getQuantity() {
         System.out.println("\nPlease enter the number of " + size.value + " pizza's you would like to order.");
-        int quantity = Input.getInt();
-        return quantity;
+        return Input.getInt();
     }
 
+    @SuppressWarnings("unused")
     static PizzaSize getSize() {
         PizzaSize[] choices = {PizzaSize.SMALL, PizzaSize.MEDIUM, PizzaSize.LARGE};
         int choice;
@@ -61,12 +55,11 @@ class Main {
         } else {
             System.out.println("Please enter the topping(s) you would like on your " + size.value + " pizza\nType \"Done\" when finished.");
         }
-        List<String> toppings = new ArrayList<String>();
+        List<String> toppings = new ArrayList<>();
         while (Input.hasNext()) {
             String topping = Input.getString();
             if (topping.equalsIgnoreCase("Done")) {
-                String[] arr = toppings.toArray(new String[0]);
-                return arr;
+                return toppings.toArray(new String[0]);
             } else {
                 toppings.add(Input.getString());
             }
